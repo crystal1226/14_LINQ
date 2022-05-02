@@ -110,6 +110,7 @@ namespace Starter
         //Step1: create delegate 型別
         //Step2: create delegate object(new...)
         //Step3: invoke/call method
+
         delegate bool MyDelegate(int n); //Step1: create delegate 型別
         private void button9_Click(object sender, EventArgs e)
         {
@@ -184,7 +185,6 @@ namespace Starter
             {
                 listBox2.Items.Add(n);
             }
-          
         }
 
         //Iterator - Yield return
@@ -235,7 +235,7 @@ namespace Starter
 
         private void button45_Click(object sender, EventArgs e)
         {
-            //var - 常用於匿名型別時
+            //var - 常用於匿名型別
             var n = 100;
             var s = "var";
             var p = new Point(100, 100);
@@ -284,7 +284,6 @@ namespace Starter
             }
 
             public int p2 { get; set; } //自動套用get set
-
             public string Field1 = "xxx", Field2 = "yyy";
 
             public MyPoint()
