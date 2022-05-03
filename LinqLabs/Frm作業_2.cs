@@ -16,8 +16,16 @@ namespace MyHomeWork
         public Frm作業_2()
         {
             InitializeComponent();
-            productPhotoTableAdapter1.Fill(aW2019DataSet1.ProductPhoto);
+            ControlsBinding();
             LoadYearToComboBox();
+        }
+
+        private void ControlsBinding()
+        {
+            productPhotoTableAdapter1.Fill(aW2019DataSet1.ProductPhoto);
+            bindingSource1.DataSource = aW2019DataSet1.ProductPhoto;
+            dataGridView1.DataSource = bindingSource1;
+            pictureBox1.DataBindings.Add("Image", bindingSource1, "LargePhoto", true);
         }
 
         private void LoadYearToComboBox()
@@ -36,22 +44,7 @@ namespace MyHomeWork
         {
             //All 腳踏車
             var q = aW2019DataSet1.ProductPhoto;
-            dataGridView1.DataSource = q.ToList();
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                var q = from p in aW2019DataSet1.ProductPhoto
-                        select p.LargePhoto[e.RowIndex];
-                MemoryStream ms = new MemoryStream(q.ToArray()); //todo 
-                pictureBox1.Image = Image.FromStream(ms);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            bindingSource1.DataSource = q.ToList();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -60,7 +53,7 @@ namespace MyHomeWork
             DateTime startTime = (DateTime)dateTimePicker1.Value;
             DateTime endTime = (DateTime)dateTimePicker2.Value;
             var q = aW2019DataSet1.ProductPhoto.Where(p => p.ModifiedDate > startTime && p.ModifiedDate < endTime);
-            dataGridView1.DataSource = q.ToList();  
+            bindingSource1.DataSource = q.ToList();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -74,7 +67,7 @@ namespace MyHomeWork
             {
                 string year = comboBox3.Text;
                 var q = aW2019DataSet1.ProductPhoto.Where(p => p.ModifiedDate.Year.ToString() == year);
-                dataGridView1.DataSource = q.ToList();
+                bindingSource1.DataSource = q.ToList();
             }
         }
 
@@ -116,7 +109,7 @@ namespace MyHomeWork
             string year = comboBox3.Text;
             var q = aW2019DataSet1.ProductPhoto.Where(p => p.ModifiedDate.Year.ToString() == year &&
                     p.ModifiedDate.Month >= startMon && p.ModifiedDate.Month <= endMon);
-            dataGridView1.DataSource = q.ToList();
+            bindingSource1.DataSource = q.ToList();
             lblMaster.Text = "Master: 共" + q.ToList().Count + "筆";
         }
     }

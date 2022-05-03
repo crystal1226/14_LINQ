@@ -58,6 +58,7 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.nwDataSet1 = new LinqLabs.NWDataSet();
             this.productsTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.ProductsTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox7.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -89,6 +90,7 @@
             // 
             this.groupBox7.AutoSize = true;
             this.groupBox7.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox7.Controls.Add(this.button1);
             this.groupBox7.Controls.Add(this.label8);
             this.groupBox7.Controls.Add(this.button54);
             this.groupBox7.Controls.Add(this.button3);
@@ -138,6 +140,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "延遲查詢估算 ";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -482,6 +485,16 @@
             // 
             this.productsTableAdapter1.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(299, 137);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 51);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Aggr.";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmLINQ架構介紹_InsideLINQ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -558,6 +571,7 @@
         private System.Windows.Forms.SplitContainer splitContainer4;
         private LinqLabs.NWDataSet nwDataSet1;
         private LinqLabs.NWDataSetTableAdapters.ProductsTableAdapter productsTableAdapter1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

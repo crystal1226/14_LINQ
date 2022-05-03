@@ -39,5 +39,41 @@ namespace Starter
                      select p).Take(5); //Take(x) 查詢前x筆
             dataGridView1.DataSource = q.ToList();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Aggr.
+            int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            listBox1.Items.Add("Sum= " + nums.Sum()); //馬上執行query
+            listBox1.Items.Add("Min= " + nums.Min());
+            listBox1.Items.Add("Max= " + nums.Max());
+            listBox1.Items.Add("Avg= " + nums.Average());
+            listBox1.Items.Add("Count= " + nums.Count());
+
+            productsTableAdapter1.Fill(nwDataSet1.Products);
+            listBox1.Items.Add("Max UnitPrice= " + $"{nwDataSet1.Products.Max(p => p.UnitPrice):c2}");
+            listBox1.Items.Add("Min UnitPrice= " + $"{nwDataSet1.Products.Min(p => p.UnitPrice):c2}");
+            listBox1.Items.Add("Avg UnitPrice= " + $"{nwDataSet1.Products.Average(p => p.UnitPrice):c2}");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //延遲查詢估算
+            int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int i = 0;
+            var q = from n in nums
+                    select ++i;
+            foreach(var v in q)
+            {
+                listBox1.Items.Add(string.Format("v={0}, i={1}", v, i));
+            }
+
+            var q1 = (from n in nums
+                      select ++i).ToList() ;
+            foreach (var v in q1)
+            {
+                listBox1.Items.Add(string.Format("v={0}, i={1}", v, i));
+            }
+        }
     }
 }

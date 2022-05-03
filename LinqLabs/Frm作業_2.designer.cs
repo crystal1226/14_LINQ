@@ -149,8 +149,7 @@ namespace MyHomeWork
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 74;
             this.dataGridView1.Size = new System.Drawing.Size(599, 467);
-            this.dataGridView1.TabIndex = 71;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.TabIndex = 71;         
             // 
             // splitContainer2
             // 
@@ -180,7 +179,7 @@ namespace MyHomeWork
             this.label10.Location = new System.Drawing.Point(429, 180);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 25);
+            this.label10.Size = new System.Drawing.Size(24, 15);
             this.label10.TabIndex = 136;
             this.label10.Text = "年:";
             // 
@@ -192,7 +191,7 @@ namespace MyHomeWork
             this.comboBox3.Location = new System.Drawing.Point(508, 175);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(176, 33);
+            this.comboBox3.Size = new System.Drawing.Size(176, 23);
             this.comboBox3.TabIndex = 135;
             // 
             // splitContainer1
@@ -236,7 +235,7 @@ namespace MyHomeWork
             this.label8.Location = new System.Drawing.Point(429, 235);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 25);
+            this.label8.Size = new System.Drawing.Size(24, 15);
             this.label8.TabIndex = 132;
             this.label8.Text = "季:";
             // 
@@ -253,7 +252,7 @@ namespace MyHomeWork
             this.comboBox2.Location = new System.Drawing.Point(508, 232);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(176, 33);
+            this.comboBox2.Size = new System.Drawing.Size(176, 23);
             this.comboBox2.TabIndex = 131;
             // 
             // dateTimePicker2
@@ -262,7 +261,7 @@ namespace MyHomeWork
             this.dateTimePicker2.Location = new System.Drawing.Point(845, 123);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(244, 31);
+            this.dateTimePicker2.Size = new System.Drawing.Size(244, 23);
             this.dateTimePicker2.TabIndex = 130;
             // 
             // button3
@@ -286,7 +285,7 @@ namespace MyHomeWork
             this.label7.Location = new System.Drawing.Point(786, 125);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 25);
+            this.label7.Size = new System.Drawing.Size(15, 15);
             this.label7.TabIndex = 129;
             this.label7.Text = "~";
             // 
@@ -310,7 +309,7 @@ namespace MyHomeWork
             this.dateTimePicker1.Location = new System.Drawing.Point(508, 123);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(244, 31);
+            this.dateTimePicker1.Size = new System.Drawing.Size(244, 23);
             this.dateTimePicker1.TabIndex = 128;
             // 
             // button10
@@ -335,7 +334,7 @@ namespace MyHomeWork
             this.label3.Location = new System.Drawing.Point(429, 125);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 25);
+            this.label3.Size = new System.Drawing.Size(38, 15);
             this.label3.TabIndex = 127;
             this.label3.Text = "區間:";
             // 
@@ -357,12 +356,12 @@ namespace MyHomeWork
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Olive;
             this.label6.Location = new System.Drawing.Point(25, 30);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(294, 22);
+            this.label6.Size = new System.Drawing.Size(216, 15);
             this.label6.TabIndex = 105;
             this.label6.Text = "LINQ to AdventureWorks DataSet";
             // 
@@ -377,11 +376,11 @@ namespace MyHomeWork
             // 
             // Frm作業_2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1462, 825);
             this.Controls.Add(this.splitContainer1);
-            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm作業_2";
             this.Text = "Frm作業_2";
