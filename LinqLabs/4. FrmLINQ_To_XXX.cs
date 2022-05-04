@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Xml.Linq;
+using System.Diagnostics;
 
 namespace Starter
 {
@@ -18,7 +20,7 @@ namespace Starter
             InitializeComponent();
         }
 
-        #region //分組彙總運算子 - Group  / Aggregate
+        #region 分組彙總運算子 - Group  / Aggregate
         private void button6_Click(object sender, EventArgs e)
         {
             //Group by
@@ -131,7 +133,7 @@ namespace Starter
         }
         #endregion
 
-        #region //LinQ to 檔案目錄
+        #region LinQ to 檔案目錄
         private void button38_Click(object sender, EventArgs e)
         {
             //依副檔名分組
@@ -163,7 +165,7 @@ namespace Starter
         }
         #endregion
 
-        #region //LinQ to string
+        #region LinQ to string
         private void button1_Click(object sender, EventArgs e)
         {
             //統計某個字在字串中出現的次數
@@ -189,7 +191,7 @@ namespace Starter
         }
         #endregion
 
-        #region //LinQ 其他語法
+        #region LinQ 其他語法
         private void button15_Click(object sender, EventArgs e)
         {
             //Linq 其他語法
@@ -226,7 +228,7 @@ namespace Starter
         }
         #endregion
 
-        #region //LinQ to DataSet
+        #region LinQ to DataSet
         private void button10_Click(object sender, EventArgs e)
         {
             //Linq to DataSet - Northwind各分類平均單價
@@ -270,10 +272,32 @@ namespace Starter
         }
         #endregion
 
-        #region //LinQ to XML
+        #region LinQ to XML
         private void button8_Click(object sender, EventArgs e)
         {
             //Select 選取投影-轉型成 XML 文件
+            var q = from p in this.nwDataSet1.Products
+                    select new XElement("Product", new XElement("ProductName", p.ProductName), new XElement("UnitPrice", p.UnitPrice));
+
+
+            XElement doc = new XElement("Products", q);
+            doc.Save("Products.xml");
+            Process.Start("Products.xml");
+        }
+       
+        private void button13_Click(object sender, EventArgs e)
+        {
+            //xml 文件 轉物件
+            XElement doc;
+            doc = XElement.Load("Products.xml");
+
+            var q = from element in doc.Elements("Product")
+                    select new
+                    {
+                        ProductName = element.Element("ProductName").Value,
+                        UnitPrice = element.Element("UnitPrice").Value
+                    };
+            this.dataGridView1.DataSource = q.ToList();
         }
         #endregion
     }

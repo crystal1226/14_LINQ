@@ -79,19 +79,19 @@ namespace MyHomeWork
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(416, 250);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(472, 395);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // lblDetails
             // 
             this.lblDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.lblDetails.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDetails.Font = new System.Drawing.Font("新細明體", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblDetails.Font = new System.Drawing.Font("微軟正黑體", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblDetails.ForeColor = System.Drawing.Color.White;
             this.lblDetails.Location = new System.Drawing.Point(4, 0);
             this.lblDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDetails.Name = "lblDetails";
-            this.lblDetails.Size = new System.Drawing.Size(408, 40);
+            this.lblDetails.Size = new System.Drawing.Size(464, 43);
             this.lblDetails.TabIndex = 102;
             this.lblDetails.Text = "Details";
             // 
@@ -99,12 +99,12 @@ namespace MyHomeWork
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(5, 45);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(5);
+            this.dataGridView2.Location = new System.Drawing.Point(4, 48);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(406, 200);
+            this.dataGridView2.Size = new System.Drawing.Size(464, 342);
             this.dataGridView2.TabIndex = 100;
             // 
             // tableLayoutPanel3
@@ -120,7 +120,7 @@ namespace MyHomeWork
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1239, 794);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1282, 787);
             this.tableLayoutPanel3.TabIndex = 133;
             // 
             // tableLayoutPanel4
@@ -130,14 +130,14 @@ namespace MyHomeWork
             this.tableLayoutPanel4.Controls.Add(this.splitContainer2, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.treeView1, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(462, 4);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(406, 4);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(773, 786);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.4173F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.4631F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.24682F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(872, 779);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // splitContainer2
@@ -155,9 +155,8 @@ namespace MyHomeWork
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.splitContainer2.Size = new System.Drawing.Size(765, 254);
-            this.splitContainer2.SplitterDistance = 340;
-            this.splitContainer2.SplitterWidth = 5;
+            this.splitContainer2.Size = new System.Drawing.Size(864, 399);
+            this.splitContainer2.SplitterDistance = 384;
             this.splitContainer2.TabIndex = 131;
             // 
             // tableLayoutPanel1
@@ -173,19 +172,19 @@ namespace MyHomeWork
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(336, 250);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(380, 395);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblMaster
             // 
             this.lblMaster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.lblMaster.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMaster.Font = new System.Drawing.Font("新細明體", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lblMaster.Font = new System.Drawing.Font("微軟正黑體", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.lblMaster.ForeColor = System.Drawing.Color.White;
             this.lblMaster.Location = new System.Drawing.Point(4, 0);
             this.lblMaster.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMaster.Name = "lblMaster";
-            this.lblMaster.Size = new System.Drawing.Size(328, 40);
+            this.lblMaster.Size = new System.Drawing.Size(372, 43);
             this.lblMaster.TabIndex = 101;
             this.lblMaster.Text = "Master";
             // 
@@ -193,21 +192,21 @@ namespace MyHomeWork
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 45);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 48);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(326, 200);
+            this.dataGridView1.Size = new System.Drawing.Size(372, 342);
             this.dataGridView1.TabIndex = 71;
             // 
             // treeView1
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(4, 266);
+            this.treeView1.Location = new System.Drawing.Point(4, 411);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(765, 254);
+            this.treeView1.Size = new System.Drawing.Size(864, 197);
             this.treeView1.TabIndex = 130;
             // 
             // panel1
@@ -229,37 +228,38 @@ namespace MyHomeWork
             this.panel1.Location = new System.Drawing.Point(4, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(450, 786);
+            this.panel1.Size = new System.Drawing.Size(394, 779);
             this.panel1.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 296);
+            this.label3.Location = new System.Drawing.Point(10, 316);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(231, 22);
+            this.label3.Size = new System.Drawing.Size(160, 16);
             this.label3.TabIndex = 134;
             this.label3.Text = "LINQ to Northwind Entity";
             // 
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button10.Location = new System.Drawing.Point(11, 430);
-            this.button10.Margin = new System.Windows.Forms.Padding(5);
+            this.button10.Location = new System.Drawing.Point(10, 459);
+            this.button10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(388, 42);
+            this.button10.Size = new System.Drawing.Size(340, 45);
             this.button10.TabIndex = 133;
             this.button10.Text = " Orders -  Group by 年 / 月";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 22);
+            this.label4.Location = new System.Drawing.Point(10, 23);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(152, 22);
+            this.label4.Size = new System.Drawing.Size(102, 16);
             this.label4.TabIndex = 126;
             this.label4.Text = "LINQ - GroupBy";
             // 
@@ -267,10 +267,10 @@ namespace MyHomeWork
             // 
             this.button4.BackColor = System.Drawing.Color.Blue;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(11, 54);
-            this.button4.Margin = new System.Windows.Forms.Padding(5);
+            this.button4.Location = new System.Drawing.Point(10, 58);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(395, 42);
+            this.button4.Size = new System.Drawing.Size(346, 45);
             this.button4.TabIndex = 85;
             this.button4.Text = "int[]  分三群 - No LINQ";
             this.button4.UseVisualStyleBackColor = false;
@@ -279,43 +279,46 @@ namespace MyHomeWork
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.LimeGreen;
-            this.button9.Location = new System.Drawing.Point(14, 606);
-            this.button9.Margin = new System.Windows.Forms.Padding(5);
+            this.button9.Location = new System.Drawing.Point(12, 646);
+            this.button9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(415, 42);
+            this.button9.Size = new System.Drawing.Size(363, 45);
             this.button9.TabIndex = 91;
             this.button9.Text = "     NW 產品最高單價前 5 筆 (包括類別名稱)";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LimeGreen;
-            this.button2.Location = new System.Drawing.Point(14, 502);
+            this.button2.Location = new System.Drawing.Point(12, 535);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(415, 44);
+            this.button2.Size = new System.Drawing.Size(363, 47);
             this.button2.TabIndex = 129;
             this.button2.Text = "總銷售金額";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.LimeGreen;
-            this.button7.Location = new System.Drawing.Point(14, 659);
-            this.button7.Margin = new System.Windows.Forms.Padding(5);
+            this.button7.Location = new System.Drawing.Point(12, 703);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(415, 42);
+            this.button7.Size = new System.Drawing.Size(363, 45);
             this.button7.TabIndex = 92;
             this.button7.Text = "     NW 產品有任何一筆單價大於300 ?";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 123);
+            this.label1.Location = new System.Drawing.Point(10, 131);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 22);
+            this.label1.Size = new System.Drawing.Size(108, 16);
             this.label1.TabIndex = 128;
             this.label1.Text = "LINQ to FileInfo[]";
             // 
@@ -323,10 +326,10 @@ namespace MyHomeWork
             // 
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(11, 202);
-            this.button6.Margin = new System.Windows.Forms.Padding(5);
+            this.button6.Location = new System.Drawing.Point(10, 215);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(388, 42);
+            this.button6.Size = new System.Drawing.Size(340, 45);
             this.button6.TabIndex = 93;
             this.button6.Text = "  依 年 分組檔案 (大=>小)";
             this.button6.UseVisualStyleBackColor = false;
@@ -336,22 +339,23 @@ namespace MyHomeWork
             // 
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(11, 328);
-            this.button8.Margin = new System.Windows.Forms.Padding(5);
+            this.button8.Location = new System.Drawing.Point(10, 350);
+            this.button8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(388, 42);
+            this.button8.Size = new System.Drawing.Size(340, 45);
             this.button8.TabIndex = 94;
             this.button8.Text = "NW Products 低中高 價產品 ";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button38
             // 
             this.button38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.button38.ForeColor = System.Drawing.Color.Black;
-            this.button38.Location = new System.Drawing.Point(11, 150);
-            this.button38.Margin = new System.Windows.Forms.Padding(5);
+            this.button38.Location = new System.Drawing.Point(10, 160);
+            this.button38.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(388, 42);
+            this.button38.Size = new System.Drawing.Size(340, 45);
             this.button38.TabIndex = 95;
             this.button38.Text = "依 檔案大小 分組檔案 (大=>小)";
             this.button38.UseVisualStyleBackColor = false;
@@ -360,32 +364,34 @@ namespace MyHomeWork
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.LimeGreen;
-            this.button1.Location = new System.Drawing.Point(14, 553);
+            this.button1.Location = new System.Drawing.Point(12, 590);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(415, 42);
+            this.button1.Size = new System.Drawing.Size(363, 45);
             this.button1.TabIndex = 125;
             this.button1.Text = "銷售最好的top 5業務員";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button15.Location = new System.Drawing.Point(11, 379);
-            this.button15.Margin = new System.Windows.Forms.Padding(5);
+            this.button15.Location = new System.Drawing.Point(10, 404);
+            this.button15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(388, 42);
+            this.button15.Size = new System.Drawing.Size(340, 45);
             this.button15.TabIndex = 121;
             this.button15.Text = " Orders -  Group by 年";
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // Frm作業_3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1239, 794);
+            this.ClientSize = new System.Drawing.Size(1282, 787);
             this.Controls.Add(this.tableLayoutPanel3);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm作業_3";
             this.Text = "Frm_作業3";
