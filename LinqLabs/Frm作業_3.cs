@@ -233,12 +233,12 @@ namespace MyHomeWork
         {
             //銷售最好的Top5業務員
             var q = (from od in dbContext.Order_Details.AsEnumerable()
-                     orderby od.UnitPrice * od.Quantity * (decimal)(1 - od.Discount) descending
+                     group od by new { od.Order.Employee.FirstName, od.Order.Employee.LastName}  into g
+                     orderby g.Sum(od=>od.UnitPrice * od.Quantity * (decimal)(1 - od.Discount)) descending
                      select new
                      {
-                         EmpFirstName = od.Order.Employee.FirstName,
-                         EmpLastName = od.Order.Employee.LastName,
-                         TotalSales=$"{od.UnitPrice * od.Quantity * (decimal)(1 - od.Discount):c2}"
+                         EmpName=$"{g.Key.FirstName} {g.Key.LastName}",
+                         TotalSales =g.Sum(od=>od.UnitPrice * od.Quantity * (decimal)(1 - od.Discount))
                      }).Take(5);
             dataGridView1.DataSource = q.ToList();
         }
