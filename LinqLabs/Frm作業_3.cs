@@ -238,7 +238,7 @@ namespace MyHomeWork
                      select new
                      {
                          EmpName=$"{g.Key.FirstName} {g.Key.LastName}",
-                         TotalSales =g.Sum(od=>od.UnitPrice * od.Quantity * (decimal)(1 - od.Discount))
+                         TotalSales =$"{g.Sum(od=>od.UnitPrice * od.Quantity * (decimal)(1 - od.Discount)):c2}"
                      }).Take(5);
             dataGridView1.DataSource = q.ToList();
         }
