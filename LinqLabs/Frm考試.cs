@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace LinqLabs
 {
@@ -15,7 +16,6 @@ namespace LinqLabs
         public Frm考試()
         {
             InitializeComponent();
-
             students_scores = new List<Student>()
                                          {
                                             new Student{ Name = "aaa", Class = "CS_101", Chi = 80, Eng = 80, Math = 50, Gender = "Male" },
@@ -24,12 +24,9 @@ namespace LinqLabs
                                             new Student{ Name = "ddd", Class = "CS_102", Chi = 80, Eng = 70, Math = 85, Gender = "Female" },
                                             new Student{ Name = "eee", Class = "CS_101", Chi = 80, Eng = 80, Math = 50, Gender = "Female" },
                                             new Student{ Name = "fff", Class = "CS_102", Chi = 80, Eng = 80, Math = 80, Gender = "Female" },
-
                                           };
         }
-
         List<Student> students_scores;
-
         public class Student
         {
             public string Name { get; set; }
@@ -39,29 +36,71 @@ namespace LinqLabs
             public int Math { get;  set; }
             public string Gender { get; set; }
         }
-
+        #region 搜尋 班級學生成績
         private void button36_Click(object sender, EventArgs e)
         {
-            #region 搜尋 班級學生成績
-           
-            // 
-            // 共幾個 學員成績 ?						
+            // 共幾個學員成績 ?
+            int i = students_scores.Count();
+            MessageBox.Show("共" + i + "個學員");
 
-            // 找出 前面三個 的學員所有科目成績					
-            // 找出 後面兩個 的學員所有科目成績					
+            // 找出前面三個的學員所有科目成績
+            var q1 = (from s in students_scores
+                      select new {s.Name, s.Chi, s.Eng, s.Math }).Take(3);
+            dataGridView1.DataSource = q1.ToList();
+            label1.Text= "前三個學員的所有科目成績";
 
-            // 找出 Name 'aaa','bbb','ccc' 的學員國文英文科目成績						
+            // 找出後面兩個的學員所有科目成績
+            var q2 = (from s in students_scores
+                      select new { s.Name, s.Chi, s.Eng, s.Math }).Skip(i-2).Take(2);
+            dataGridView2.DataSource = q2.ToList();
+            label2.Text = "後兩個學員的所有科目成績";
 
-            // 找出學員 'bbb' 的成績	                          
-
-            // 找出除了 'bbb' 學員的學員的所有成績 ('bbb' 退學)	
-
-            // 找出 'aaa', 'bbb' 'ccc' 學員 國文數學兩科 科目成績  |				
-            // 數學不及格 ... 是誰 
-            #endregion
-
+            //找出 Name 'aaa','bbb','ccc' 的學員國文英文科目成績
+            var q3 = from s in students_scores
+                     //where s.Name.Contains("aaa") || s.Name.Contains("bbb") || s.Name.Contains("ccc")
+                     where s.Name=="aaa" || s.Name=="bbb" || s.Name=="ccc"
+                     select new {s.Name, s.Chi, s.Eng};
+            dataGridView3.DataSource = q3.ToList();
+            label3.Text = " Name 'aaa','bbb','ccc' 的學員國文英文科目成績";
         }
-  
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //找出學員 'bbb' 的成績
+            var q1 = from s in students_scores
+                     where s.Name == "bbb"
+                     select s;
+            dataGridView1.DataSource = q1.ToList();
+            label1.Text = "學員 'bbb' 的成績";
+
+            //找出除了 'bbb' 學員的學員的所有成績('bbb' 退學)
+            var q2 = from s in students_scores
+                     where !s.Name.Contains("bbb")
+                     select s;
+            dataGridView2.DataSource = q2.ToList();
+            label2.Text = "除了 'bbb' 學員的學員的所有成績('bbb' 退學)";
+
+            // 找出 'aaa', 'bbb' 'ccc' 學員國文數學兩科科目成績
+            var q3=from s in students_scores
+                   where s.Name == "aaa" || s.Name == "bbb" || s.Name == "ccc"
+                   select new { s.Name, s.Chi, s.Math };
+            dataGridView3.DataSource = q3.ToList();
+            label3.Text = "'aaa', 'bbb' 'ccc' 學員國文數學兩科科目成績";
+
+            // 數學不及格... 是誰
+            var q4 = from s in students_scores
+                     where s.Math < 60
+                     select s.Name;
+
+            List<string> StuName = new List<string>();
+            foreach (string name in q4)
+            {
+                StuName.Add(name);
+            }
+            string result = String.Join(", ", StuName.ToArray());
+            MessageBox.Show("數學不及格："+result);
+        }
+        #endregion
         private void button37_Click(object sender, EventArgs e)
         {
             //個人 sum, min, max, avg
@@ -93,16 +132,97 @@ namespace LinqLabs
             // 75     3.00%
         }
 
+        #region 銷售分析 & Plot
+        NorthwindEntities dbContext = new NorthwindEntities();
         private void button34_Click(object sender, EventArgs e)
         {
-            // 年度最高銷售金額 年度最低銷售金額
+            // 年度最高銷售金額 / 年度最低銷售金額
+            var q1 = from o in dbContext.Orders.AsEnumerable()
+                     group o by o.OrderDate.Value.Year into g
+                     select new
+                     {
+                         Year = g.Key,
+                         MaxSales = $"{g.Max(o=>o.Order_Details.Sum(od => od.UnitPrice * od.Quantity * (decimal)(1 - od.Discount))):c2}",
+                         MinSales = $"{g.Min(o => o.Order_Details.Sum(od => od.UnitPrice * od.Quantity * (decimal)(1 - od.Discount))):c2}"
+                     };
+            dataGridView1.DataSource = q1.ToList();
+            label1.Text = "年度最高銷售金額 / 年度最低銷售金額";
+
             // 那一年總銷售最好 ? 那一年總銷售最不好 ?  
+            var q2 = from od in dbContext.Order_Details.AsEnumerable()
+                     group od by od.Order.OrderDate.Value.Year into g
+                     select new
+                     {
+                         Year=g.Key,
+                         Sales= $"{g.Sum(od => od.UnitPrice * od.Quantity * (decimal)(1 - od.Discount)):c2}"
+                     };
+            dataGridView2.DataSource = q2.ToList();
+            label2.Text = "年總銷售最好為 " + q2.First().Year + " 年，最差為 " + q2.Last().Year + " 年";
+
             // 那一個月總銷售最好 ? 那一個月總銷售最不好 ?
+            var q3 = from od in dbContext.Order_Details.AsEnumerable()
+                     group od by od.Order.OrderDate.Value.Month into g
+                     orderby g.Sum(od => od.UnitPrice * od.Quantity * (decimal)(1 - od.Discount)) descending
+                     select new
+                     {
+                         Month = g.Key,
+                         Sales = $"{g.Sum(od => od.UnitPrice * od.Quantity * (decimal)(1 - od.Discount)):c2}"
+                     };
+            dataGridView3.DataSource = q3.ToList();
+            label3.Text = "月總銷售最好為 " +q3.First().Month+" 月，最差為 "+q3.Last().Month+" 月";
 
-            // 每年 總銷售分析 圖
-            // 每月 總銷售分析 圖
+            // 每年總銷售分析圖
+            chart1.DataSource = q2.ToList();
+            chart1.Series[0].XValueMember = "Year";
+            chart1.Series[0].YValueMembers = "Sales";
+            chart1.Series[0].ChartType = SeriesChartType.Column;
+
+            // 每月總銷售分析圖
+            chart2.DataSource = q3.ToList();
+            chart2.Series[0].XValueMember = "Month";
+            chart2.Series[0].YValueMembers = "Sales";
+            chart2.Series[0].ChartType = SeriesChartType.Column;
         }
+        #endregion
 
-      
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //年銷售成長率
+            var q = from o in dbContext.Orders.AsEnumerable()
+                    group o by o.OrderDate.Value.Year into g
+                    orderby g.Key
+                    select new
+                    {
+                        Year=g.Key,
+                        Sales=g.Sum(o => o.Order_Details.Sum(od => od.UnitPrice * od.Quantity * (decimal)(1 - od.Discount)))
+                    };
+            dataGridView1.DataSource = q.ToList();
+            label1.Text = "年度銷售";
+            label2.Text = "年銷售增長率";
+
+            List<object> list = new List<object>();
+            var Q = q.ToList(); //先存進List
+            for (int i = 1; i < Q.Count(); i++)
+            {
+                decimal rate = (Q[i].Sales - Q[i - 1].Sales) / Q[i - 1].Sales;
+                YearOnYear yearOnYear = new YearOnYear
+                {
+                    year=Q[i].Year,
+                    YoY=rate
+                };
+                list.Add(yearOnYear);
+            }
+            dataGridView2.DataSource = list;
+            chart1.DataSource = list;
+            chart1.Series[0].XValueMember = "year";
+            chart1.Series[0].YValueMembers = "YoY";
+            chart1.Series[0].ChartType = SeriesChartType.Column;
+            chart1.Series[0].LegendText = "年銷售增長率";
+        }
+        public class YearOnYear
+        {
+            public int year { get; set; }
+            public decimal YoY { get; set; }
+        }
     }
 }

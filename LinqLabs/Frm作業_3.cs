@@ -192,6 +192,7 @@ namespace MyHomeWork
 
             var q = from o in dbContext.Orders.AsEnumerable()
                     group o by new { o.OrderDate.Value.Year, o.OrderDate.Value.Month } into g
+                    //group o by o.OrderDate.Value.ToString("yyyyMM") into g
                     orderby g.Key.Year, g.Key.Month
                     select new
                     {
@@ -237,7 +238,7 @@ namespace MyHomeWork
                      orderby g.Sum(od=>od.UnitPrice * od.Quantity * (decimal)(1 - od.Discount)) descending
                      select new
                      {
-                         EmpName=$"{g.Key.FirstName} {g.Key.LastName}",
+                         Name=$"{g.Key.FirstName} {g.Key.LastName}",
                          TotalSales =$"{g.Sum(od=>od.UnitPrice * od.Quantity * (decimal)(1 - od.Discount)):c2}"
                      }).Take(5);
             dataGridView1.DataSource = q.ToList();

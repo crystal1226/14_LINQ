@@ -484,8 +484,8 @@
         <EntityTypeShape EntityType="NorthwindModel.Category" Width="1.5" PointX="0.75" PointY="0.625" IsExpanded="true" />
         <EntityTypeShape EntityType="NorthwindModel.Product" Width="1.5" PointX="3" PointY="0.625" IsExpanded="true" />
         <AssociationConnector Association="NorthwindModel.FK_Products_Categories" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="NorthwindModel.Order_Detail" Width="1.5" PointX="8.125" PointY="0.5" />
-        <EntityTypeShape EntityType="NorthwindModel.Order" Width="1.5" PointX="5.5" PointY="2" />
+        <EntityTypeShape EntityType="NorthwindModel.Order_Detail" Width="1.5" PointX="6.75" PointY="0.5" />
+        <EntityTypeShape EntityType="NorthwindModel.Order" Width="1.5" PointX="4.875" PointY="1.75" />
         <AssociationConnector Association="NorthwindModel.FK_Order_Details_Orders" />
         <AssociationConnector Association="NorthwindModel.FK_Order_Details_Products" />
         <EntityTypeShape EntityType="NorthwindModel.Employee" Width="1.5" PointX="8.125" PointY="3.25" />

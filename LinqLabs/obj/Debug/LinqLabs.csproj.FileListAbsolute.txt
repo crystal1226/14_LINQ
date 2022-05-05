@@ -174,3 +174,11 @@ C:\iSpan\LINQ\LinqLabs (Startup_r)\LinqLabs\obj\Debug\LinqLabs.csproj.CoreCompil
 C:\iSpan\LINQ\LinqLabs (Startup_r)\LinqLabs\obj\Debug\LinqLabs.csproj.CopyComplete
 C:\iSpan\LINQ\LinqLabs (Startup_r)\LinqLabs\obj\Debug\LinqLabs.exe
 C:\iSpan\LINQ\LinqLabs (Startup_r)\LinqLabs\obj\Debug\LinqLabs.pdb
+C:\iSpan_C#\LINQ\LinqLabs (Startup)\LinqLabs\bin\Debug\EntityFramework.dll
+C:\iSpan_C#\LINQ\LinqLabs (Startup)\LinqLabs\bin\Debug\EntityFramework.SqlServer.dll
+C:\iSpan_C#\LINQ\LinqLabs (Startup)\LinqLabs\bin\Debug\EntityFramework.xml
+C:\iSpan_C#\LINQ\LinqLabs (Startup)\LinqLabs\bin\Debug\EntityFramework.SqlServer.xml
+C:\iSpan_C#\LINQ\LinqLabs (Startup)\LinqLabs\bin\Debug\zh-Hant\EntityFramework.resources.dll
+C:\iSpan_C#\LINQ\LinqLabs (Startup)\LinqLabs\obj\Debug\MyHomeWork.Frm作業_3.resources
+C:\iSpan_C#\LINQ\LinqLabs (Startup)\LinqLabs\obj\Debug\LinqLabs.Frm考試.resources
+C:\iSpan_C#\LINQ\LinqLabs (Startup)\LinqLabs\obj\Debug\LinqLabs.csproj.CopyComplete
