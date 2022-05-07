@@ -101,12 +101,67 @@ namespace LinqLabs
             MessageBox.Show("數學不及格："+result);
         }
         #endregion
+        #region 每個學生個人成績
         private void button37_Click(object sender, EventArgs e)
         {
             //個人 sum, min, max, avg
+            //Sum
+            var q1 = from s in students_scores
+                     select new
+                     {
+                         s.Name,
+                         Sum = s.Chi+s.Eng+s.Math,
+                         Min=Math.Min((Math.Min(s.Chi,s.Eng)),s.Math),
+                         Max = Math.Max((Math.Max(s.Chi, s.Eng)), s.Math),
+                         Avg=( s.Chi + s.Eng + s.Math)/3
+                     };
+            dataGridView1.DataSource = q1.ToList();
+            label1.Text = "個人成績 Sum, Min, Max, Avg";
 
             //各科 sum, min, max, avg
+            //Sum
+            List<Student> list = new List<Student>();
+            //Sum
+            list.Add(new Student
+            {
+                Name="各科Sum",
+                Chi = students_scores.Sum(s => s.Chi),
+                Math = students_scores.Sum(s => s.Math),
+                Eng = students_scores.Sum(s => s.Eng)
+            });
+
+            //Min
+            list.Add(new Student
+            {
+                Name = "各科Min",
+                Chi = students_scores.Min(s => s.Chi),
+                Math = students_scores.Min(s => s.Math),
+                Eng = students_scores.Min(s => s.Eng)
+            });
+
+            //Max
+            list.Add(new Student
+            {
+                Name = "各科Max",
+                Chi = students_scores.Max(s => s.Chi),
+                Math = students_scores.Max(s => s.Math),
+                Eng = students_scores.Max(s => s.Eng)
+            });
+
+            //Avg
+            list.Add(new Student
+            {
+                Name = "各科Avg",
+                Chi = (int)students_scores.Average(s => Convert.ToDouble(s.Chi)),
+                Math = (int)students_scores.Average(s => Convert.ToDouble(s.Math)),
+                Eng = (int)students_scores.Average(s => Convert.ToDouble(s.Eng))
+            });
+            var q2 = list;
+            dataGridView2.DataSource = q2.ToList();
+            label2.Text = "各科 Sum, Min, Max, Avg";
         }
+      
+        #endregion
         private void button33_Click(object sender, EventArgs e)
         {
             // split=> 分成 三群 '待加強'(60~69) '佳'(70~89) '優良'(90~100) 
@@ -198,9 +253,9 @@ namespace LinqLabs
                     };
             dataGridView1.DataSource = q.ToList();
             label1.Text = "年度銷售";
-            label2.Text = "年銷售增長率";
+            label2.Text = "年銷售成長率";
 
-            List<object> list = new List<object>();
+            List<YearOnYear> list = new List<YearOnYear>();
             var Q = q.ToList(); //先存進List
             for (int i = 1; i < Q.Count(); i++)
             {
@@ -213,11 +268,20 @@ namespace LinqLabs
                 list.Add(yearOnYear);
             }
             dataGridView2.DataSource = list;
-            chart1.DataSource = list;
-            chart1.Series[0].XValueMember = "year";
-            chart1.Series[0].YValueMembers = "YoY";
-            chart1.Series[0].ChartType = SeriesChartType.Column;
-            chart1.Series[0].LegendText = "年銷售增長率";
+            chart2.DataSource = list;
+            chart2.Series[0].XValueMember = "year";
+            chart2.Series[0].YValueMembers = "YoY";
+            chart2.Series[0].ChartType = SeriesChartType.Column;
+            chart2.Series[0].LegendText = "年銷售成長率";
+
+            chart1.Series.Add("年銷售成長率");
+            foreach(var item in list)
+            {
+                chart1.Series[1].Points.AddXY(item.year,item.YoY);
+            }
+            chart1.Series[1].XAxisType = AxisType.Secondary;
+            chart1.Series[1].YAxisType = AxisType.Secondary;
+            chart1.Series[1].ChartType = SeriesChartType.Line;
         }
         public class YearOnYear
         {
